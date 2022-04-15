@@ -1,0 +1,15 @@
+.invisible {
+  transform: scale(0);
+}
+
+.calc {
+  transform: scale(1);
+  width: 100%;
+}
+.container {
+}
+
+.container_p {
+  display: flex;
+  justify-content: left;
+}

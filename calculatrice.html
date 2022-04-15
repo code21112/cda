@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculatrice</title>
+    <link rel="stylesheet" href="calculatrice.css" />
+  </head>
+  <body>
+    <h1>Calculatrice</h1>
+    <button id="btn_montrer">Montrer/Cacher</button>
+    <br />
+    <br />
+    <div class="container">
+      <form action="#" onsubmit="calculate()" class="calc" id="calc">
+        <input type="number" id="firstTerm" placeholder="Premier nombre" />
+        <select name="" id="operation">
+          <option value="+">+</option>
+          <option value="-">-</option>
+          <option value="*">*</option>
+          <option value="/">/</option>
+        </select>
+        <input type="number" id="secondTerm" placeholder="Deuxième nombre" />
+        <input type="submit" id="validate" value="Calculer" />
+      </form>
+      <div class="container_p">
+        <p id="text_under_form"></p>
+      </div>
+    </div>
+
+    <script src="calculatrice.js"></script>
+  </body>
+</html>
