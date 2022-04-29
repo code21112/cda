@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-commerce</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <!-- <link rel="stylesheet" type="text/css" href="bootstrap-drawer.min.css"> -->
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+      integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+      integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body class="has-drawer">
+    <!-- NAVBAR -->
+    <ul class="nav bg-dark">
+      <div class="container_navbar_ul_li">
+        <li class="nav-item">
+          <a class="nav-link active text-light" aria-current="page" href="#"
+            >Home</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-light" href="#">Link</a>
+        </li>
+      </div>
+      <div class="container_btn-cart">
+        <!-- <button class="nav-link btn btn-light text-dark btn-cart">Voir mon panier</button> -->
+        <button
+          class="navbar-toggler nav-link btn btn-light text-light btn-cart"
+          type="button"
+          onclick="openSideDrawer()"
+        >
+          Voir mon panier
+          <!-- <span class="navbar-toggler-icon">Voir mon panier</span> -->
+        </button>
+      </div>
+    </ul>
+    <!-- END OF NAVBAR -->
+    <!-- CARDS -->
+    <div class="container container_cards">
+      <div class="row">
+        <!-- <div class="container_card col-lg-3 col-md-6"> -->
+        <!-- <div class="card" style="width: 18rem"> -->
+        <!-- <img src="http://www.top13.net/small-flowers/" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <h5>Prix: €</h5>
+                        <a href="#" class="btn btn-primary">Ajouter au panier</a>
+                    </div> -->
+        <!-- </div> -->
+        <!-- </div> -->
+      </div>
+    </div>
+    <!-- END OF CARDS -->
+
+    <!-- MODAL CLICK ON BTN Voir mon panier -->
+    <!-- SIDE DRAWER -->
+    <div id="side-drawer" class="position-fixed">
+      <div class="h-100 bg-white">
+        <div class="p-4 bg-light">
+          <h2>Mon panier</h2>
+          <p>
+            Voici la liste de vos produits (vous pouvez augmenter la quantité si
+            vous le souhaitez)
+          </p>
+          <div class="container_total-and-btn-valider">
+            <!-- <a href="#"> -->
+            <h5 class="text-total">Total: €</h5>
+            <button
+              class="btn btn-outline-primary right-side-drawer_title"
+              onclick="openSideDrawer2()"
+            >
+              Valider ma commande
+              <!-- <h3 class="right-side-drawer_title">Mon panier</h3> -->
+            </button>
+            <!-- </a> -->
+          </div>
+        </div>
+        <!-- CART DETAILS -->
+        <div class="container container_details-cart">
+          <h6>Désignation:</h6>
+          <button
+            class="btn btn-outline-danger right-side-drawer_title"
+            onclick=""
+          >
+            Supprimer
+            <!-- <h3 class="right-side-drawer_title">Mon panier</h3> -->
+          </button>
+        </div>
+        <!-- END OF CAFRT DETAILS -->
+        <!-- <ul class="list-group" onclick="closeSideDrawer()">
+          <a
+            href="#"
+            class="list-group-item list-group-item-action border-0 rounded-0 active"
+            >Link</a
+          >
+          <a
+            href="#"
+            class="list-group-item list-group-item-action border-0 rounded-0"
+            >Link</a
+          >
+        </ul> -->
+      </div>
+    </div>
+    <div
+      id="side-drawer-void"
+      class="position-fixed d-none"
+      onclick="closeSideDrawer()"
+    ></div>
+    <!-- END OF SIDE DRAWER -->
+    <!-- END OF MODAL CLICK ON BTN Voir mon panier -->
+
+    <!-- MODAL CLICK ON BTN Valider la commande -->
+    <!-- SIDE DRAWER -->
+    <div id="side-drawer2" class="position-fixed">
+      <div class="h-100 bg-white">
+        <div class="p-5 bg-light">
+          <h4>Valider ma commande</h4>
+          <p>
+            Veuillez rentrer vos informations dans les champs de saisie
+            ci-dessous:
+          </p>
+        </div>
+        <form class="form_user">
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="input_nom"
+              placeholder="Nom"
+              aria-describedby="emailHelp"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="input_prenom"
+              placeholder="Prénom"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="email"
+              class="form-control"
+              id="input_email"
+              placeholder="Email"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="tel"
+              class="form-control"
+              id="input_telephone"
+              placeholder="N° de tél"
+            />
+          </div>
+          <div class="mb-3">
+            <input
+              type="text"
+              class="form-control"
+              id="input_adresse"
+              placeholder="Email"
+            />
+          </div>
+          <button
+            type="submit"
+            class="btn btn-primary"
+            onclick="closeSideDrawer2()"
+          >
+            Enregistrer
+          </button>
+        </form>
+      </div>
+    </div>
+    <div id="side-drawer-void" class="position-fixed d-none"></div>
+    <!-- END OF SIDE DRAWER -->
+    <!-- MODAL CLICK ON BTN Valider la commande -->
+
+    <!-- <script src="jquery.min.js"></script>
+    <script src="bootstrap.min.js"></script> -->
+    <script src="./js/app.js"></script>
+    <script src="./js/handleDrawer.js"></script>
+    <script src="./js/handleCart.js"></script>
+  </body>
+</html>
