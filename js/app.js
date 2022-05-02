@@ -68,6 +68,8 @@ function selectBtns(productsAddedToCart) {
 }
 
 function addProductToCart(productsAddedToCart, product) {
+    reinitiateDisplayCart();
+
   console.log("product within addProductToCart ", product);
   // productsAddedToCart.push(product);
   // console.log("productsAddedToCart", productsAddedToCart);
